@@ -24,13 +24,6 @@ jobs:
         name: Build APk
       - run: flutter build apk --debug --split-per-abi
         name: Push to Releases
-      - run: |
-          cd build/ios/iphoneos
-          mkdir Payload
-          cd Payload
-          ln -s ../Runner.app
-          cd ..
-          zip -r app.ipa Payload
       - uses: ncipollo/release-action@v1
         with:
           artifacts: "build/app/outputs/apk/debug/*,build/ios/iphoneos/app.ipa"
