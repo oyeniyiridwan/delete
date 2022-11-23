@@ -25,7 +25,6 @@ jobs:
       - run: flutter build apk --debug --split-per-abi
         name: Push to Releases
       - run: |
-          flutter build ios --no-codesign
           cd build/ios/iphoneos
           mkdir Payload
           cd Payload
